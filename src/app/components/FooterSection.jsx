@@ -21,7 +21,7 @@ import {
 
 export default function FooterSection() {
   return (
-    <Box backgroundColor={'#202f39'} color={'white'} h='400px'>
+    <Box backgroundColor={'#202f39'} color={'white'}>
       <SimpleGrid columns={[1, 2, 3]} spacing='40px' p={10}>
         <Box>
           <Text ml={3}>Navigation</Text>
@@ -41,7 +41,7 @@ export default function FooterSection() {
             <ListItem>Internet of Things and AI</ListItem>
           </UnorderedList>
         </Box>
-        <Box>
+        <Box mb={100}>
           <Text ml={3}>Conatct Us</Text>
           <UnorderedList styleType={'none'} spacing={4} mt={5}>
             <ListItem>01212312321312</ListItem>
@@ -52,14 +52,14 @@ export default function FooterSection() {
         </Box>
       </SimpleGrid>
       <Box
-        h='80px'
+        h='60px'
         bottom={0}
         position='absolute'
         backgroundColor={'#12232f'}
         w='100%'
         textAlign={'center'}
       >
-        <Text mt={7}>Copy Right @panaverse 2022</Text>
+        <Text mt={3}>Copy Right @panaverse 2022</Text>
       </Box>
     </Box>
   );
