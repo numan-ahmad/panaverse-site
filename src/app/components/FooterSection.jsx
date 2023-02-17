@@ -22,7 +22,12 @@ import {
 export default function FooterSection() {
   return (
     <Box backgroundColor={'#202f39'} color={'white'}>
-      <SimpleGrid columns={[1, 2, 3]} spacing='40px' p={10}>
+      <SimpleGrid
+        columns={[1, 2, 3]}
+        spacing='40px'
+        p={10}
+        textAlign={'center'}
+      >
         <Box>
           <Text ml={3}>Navigation</Text>
           <UnorderedList styleType={'none'} spacing={4} mt={5}>

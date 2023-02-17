@@ -1,6 +1,3 @@
-import './globals.css';
-import './navBar.css';
-
 export default function RootLayout({
   children,
 }: {

@@ -1,41 +1,22 @@
-import { ReactNode } from 'react';
 import {
   Box,
   Flex,
-  Avatar,
   HStack,
-  Link,
   IconButton,
   Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
   useDisclosure,
   useColorModeValue,
   Stack,
 } from '@chakra-ui/react';
-import { HamburgerIcon, CloseIcon, AddIcon } from '@chakra-ui/icons';
+import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import Image from 'next/image';
-import Logo from '../panaverseLogo.png';
+import Link from 'next/link';
 
-const Links = ['Home', 'About', 'Contact'];
-
-const NavLink = ({ children }: { children: ReactNode }) => (
-  <Link
-    px={2}
-    py={1}
-    rounded={'md'}
-    _hover={{
-      textDecoration: 'none',
-      bg: useColorModeValue('gray.200', 'gray.700'),
-    }}
-    href={'#'}
-  >
-    {children}
-  </Link>
-);
+const Links = [
+  { heading: 'Home', link: '/' },
+  { heading: 'About', link: '/about' },
+  { heading: 'Contact', link: '/home' },
+];
 
 export default function NavBar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -54,9 +35,10 @@ export default function NavBar() {
           <HStack spacing={8} alignItems={'center'}>
             <Box>
               <Image
-                src={Logo}
+                src='/panaverseLogo.png'
                 alt='Panavers Main Logo'
                 width='100'
+                height={100}
                 className='nav-logo'
               />
             </Box>
@@ -67,8 +49,10 @@ export default function NavBar() {
               spacing={4}
               display={{ base: 'none', md: 'flex' }}
             >
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+              {Links.map((link, index) => (
+                <Link href={link.link} key={index}>
+                  {link.heading}
+                </Link>
               ))}
             </HStack>
           </HStack>
@@ -82,8 +66,10 @@ export default function NavBar() {
         {isOpen ? (
           <Box pb={4} display={{ md: 'none' }}>
             <Stack as={'nav'} spacing={4}>
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+              {Links.map((link, index) => (
+                <Link href={link.link} key={index}>
+                  {link.heading}
+                </Link>
               ))}
             </Stack>
           </Box>

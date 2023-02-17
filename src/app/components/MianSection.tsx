@@ -1,24 +1,6 @@
 import { Box, Heading, Text } from '@chakra-ui/react';
 
 export default function MainSection() {
-  const outerBoxStyles = {
-    height: '700px',
-    width: '900px',
-    maxWidth: '100%',
-    background: 'url(../main.jpg) center/cover no-repeat',
-  };
-
-  const innerBoxStyles = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    textAlign: 'center',
-    boxSize: 'full',
-    color: 'white',
-    textShadow: '0 0 20px black',
-    fontWeight: 'bold',
-    fontSize: '20px',
-  };
   return (
     <Box
       h={600}
