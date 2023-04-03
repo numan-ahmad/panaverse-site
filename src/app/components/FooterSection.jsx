@@ -7,6 +7,7 @@ import {
   CardHeader,
   Flex,
   Heading,
+  Link,
   ListItem,
   SimpleGrid,
   Stat,
@@ -18,6 +19,12 @@ import {
   Text,
   UnorderedList,
 } from '@chakra-ui/react';
+
+const Links = [
+  { heading: 'Home', link: '/' },
+  { heading: 'About', link: '/about' },
+  { heading: 'Contact', link: '/contactus' },
+];
 
 export default function FooterSection() {
   return (
@@ -31,14 +38,15 @@ export default function FooterSection() {
         <Box>
           <Text ml={3}>Navigation</Text>
           <UnorderedList styleType={'none'} spacing={4} mt={5}>
-            <ListItem>Home</ListItem>
-            <ListItem>About</ListItem>
-            <ListItem>Contact</ListItem>
-            <ListItem>Apply</ListItem>
+            {Links.map((link, index) => (
+              <ListItem key={index}>
+                <Link href={link.link}>{link.heading}</Link>
+              </ListItem>
+            ))}
           </UnorderedList>
         </Box>
         <Box>
-          <Text ml={3}>Course</Text>
+          <Text ml={3}>Courses</Text>
           <UnorderedList styleType={'none'} spacing={4} mt={5}>
             <ListItem>Artificial Intelligence</ListItem>
             <ListItem>Cloud Native and Mobile Web</ListItem>
